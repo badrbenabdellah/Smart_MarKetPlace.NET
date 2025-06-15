@@ -162,20 +162,12 @@ Content-Type: application/json
 
 ## 🎨 Screenshots
 
-### Main Interface
-![Main Interface](Images/mission1.png)
+### Main Interface & Language Selection
+![Main Interface](Images/picture_1.png)
 
-### Language Selection
-![Language Selection](Images/MISSION2.png)
 
 ### Generated Mission
-![Generated Mission](Images/MISSION3.png)
-
-### Arabic Support
-![Arabic Support](Images/mission4.png)
-
-### Arabic Output
-![Arabic Output](Images/mission5.png)
+![Generated Mission](Images/picture_2.png)(Images/picture_3.png)
 
 ## 🔧 Development
 
