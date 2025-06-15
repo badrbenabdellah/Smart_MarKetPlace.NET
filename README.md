@@ -167,7 +167,8 @@ Content-Type: application/json
 
 
 ### Generated Mission
-![Generated Mission](Images/picture_2.png)(Images/picture_3.png)
+![Generated Mission](Images/picture_2.png)
+![Generated Mission](Images/picture_3.png)
 
 ## 🔧 Development
 
@@ -195,7 +196,7 @@ We welcome contributions! Please feel free to submit a Pull Request.
 
 ## 📄 License
 
-This project is developed by **Safae Hammouch** and **Oumaima Boughdad**.
+This project is developed by **BENABDELLAH Badr** and **Sangare Boubacar**.
 
 ## 🆘 Support
 
