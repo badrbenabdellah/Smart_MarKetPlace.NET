@@ -76,10 +76,7 @@
       },
       "SmartMarketPlace.Models/1.0.0": {
         "runtime": {
-          "SmartMarketPlace.Models.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "SmartMarketPlace.Models.dll": {}
         }
       }
     }

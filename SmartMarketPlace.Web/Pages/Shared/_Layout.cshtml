@@ -1,121 +1,93 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]</title>
+    <title>@ViewData["Title"] - Smart MarketPlace</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #006d77; /* Deep teal */
-            --primary-dark: #004d55; /* Darker teal */
-            --secondary: #ff6f61; /* Coral */
-            --secondary-dark: #cc4b3e; /* Darker coral */
-            --background: #f8fafc; /* Soft off-white */
-            --text-dark: #1a1a1a; /* Charcoal text */
-            --text-muted: #5f6a7a; /* Muted text */
-            --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-            --border-radius: 12px;
-        }
-
-        body {
-            background-color: var(--background);
-            font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
-        }
-
-        .navbar {
-            background-color: var(--primary) !important;
-            box-shadow: var(--box-shadow);
-            padding: 1rem 0;
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: #ffffff !important;
-            transition: color 0.3s ease;
-            cursor: pointer;
-        }
-
-        .navbar-brand:hover {
-            color: var(--secondary) !important;
-        }
-
-        .navbar-toggler {
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-
-        .container {
-            text-align: center; /* Center text in container */
-        }
-
-        main {
-            min-height: calc(100vh - 200px); /* Ensure main content fills space */
-            padding-bottom: 2rem;
-        }
-
-        .footer {
-            background-color: #ffffff;
-            border-top: 1px solid #e2e8f0;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            padding: 1.5rem 0;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .footer .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+    <meta name="description" content="Smart MarketPlace - AI Mission Generator for Professional Freelancers" />
+    <meta name="author" content="Smart MarketPlace" />
 </head>
-<body>
+<body class="animate-fadeInUp">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom mb-4">
+        <nav class="navbar-professional">
             <div class="container">
-                <a class="navbar-brand" id="homeLink" href="~/">Smart MarketPlace</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <!-- Removed Accueil link -->
-                    </ul>
+                <div class="navbar-content">
+                    <a class="navbar-brand-professional animate-fadeInScale" href="~/">
+                        <div class="brand-text">AI Job Mission Generator</div>
+                        <div class="brand-subtitle">Create professional freelance missions in seconds with artificial intelligence</div>
+                    </a>
                 </div>
             </div>
         </nav>
     </header>
+    
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            © 2025 - Smart MarketPlace - Générateur de Missions IA
-        </div>
-    </footer>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    
     <script>
+        // Sophisticated entry animations
         document.addEventListener('DOMContentLoaded', function() {
-            // Add click event to Smart MarketPlace logo
-            document.getElementById('homeLink').addEventListener('click', function() {
-                window.location.href = '~/';
+            // Progressive element animation
+            const elements = document.querySelectorAll('.glass-card, .hero-section, .btn-gradient');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            elements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                observer.observe(el);
+            });
+            
+            // Light parallax effect for hero section
+            const heroSection = document.querySelector('.hero-section');
+            if (heroSection) {
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * -0.3;
+                    if (scrolled < 500) {
+                        heroSection.style.transform = `translateY(${rate}px)`;
+                    }
+                });
+            }
+            
+            // Button hover animations
+            const buttons = document.querySelectorAll('.btn-gradient');
+            buttons.forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.02)';
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
             });
         });
     </script>
-
-    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

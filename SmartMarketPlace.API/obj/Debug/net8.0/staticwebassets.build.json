@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "vrL2hmfmAaeMDddYTO6L7u1kIqPXBu7dsr/QdLH4RhA=",
+  "Hash": "uEvG1dRdeol1OYH+h8ztwITJ6RIuMBF9ns5qyLC1Y1M=",
   "Source": "SmartMarketPlace.API",
   "BasePath": "_content/SmartMarketPlace.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }
