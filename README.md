@@ -43,7 +43,7 @@ A cutting-edge web application powered by AI that intelligently generates detail
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/OumaimaBoughdad/Smart-marketplace.git
+   git clone https://github.com/badrbenabdellah/Smart_MarKetPlace.NET.git
    cd Smart-marketplace
    ```
 
